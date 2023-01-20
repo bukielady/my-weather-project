@@ -37,14 +37,17 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
-
-function submitSearch(event) {
-  event.preventDefault();
+function search(city) {
   let apiKey = "bd73bc302072caa2b4e1db165028120d";
-  let city = document.querySelector("#city-search").value;
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeather);
+}
+
+function submitSearch(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-search").value;
+  search(city);
 }
 
 function displayWeather(response) {
@@ -72,3 +75,5 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", submitSearch);
+
+search("Lagos");
