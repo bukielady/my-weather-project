@@ -36,8 +36,18 @@ footer {
 .card:hover {
   background-color: inherit;
 }
+.weather-temperature .active {
+  color: #0d0d0e;
+  cursor: default;
+}
 .fa-location-crosshairs {
   width: 200;
+}
+.github-link {
+  color: #0d0d0e;
+}
+.shecodes-profile {
+  color: #0d0d0e;
 }
 .temperature {
   font-size: 15px;
