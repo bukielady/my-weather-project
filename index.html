@@ -30,133 +30,138 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-1">
-          <button class="btn" id="current-location-button">
-            <i class="fa-solid fa-location-crosshairs"></i>
-          </button>
-        </div>
-        <div class="col-5">
-          <form id="search-form">
-            <input
-              type="text"
-              id="city-search"
-              placeholder="Search for a city..."
-              autocomplete="off"
-              autofocus="on"
-            />
-            <input type="submit" value="SEARCH" />
-          </form>
-        </div>
-        <br />
-        <br />
-
+      <div class="weather-app">
         <div class="row">
+          <div class="col-1">
+            <button class="btn" id="current-location-button">
+              <i class="fa-solid fa-location-crosshairs"></i>
+            </button>
+          </div>
           <div class="col-5">
-            <h2 id="city"></h2>
-            <h4>
-              <img src="images/rain_light.png" width="50" />
-              <div class="temperature-results">
-                <span class="current-temperature" id="temperature"></span>
-                <span class="units">
-                  <a href="#" id="celsius-link">°C</a>" |
-                  <a href="#" id="fahrenheit-link">°F</a></span
-                >
-              </div>
-            </h4>
-            <ul>
-              <li id="current-date">Fri 3:39PM</li>
-              <li id="condition"></li>
-            </ul>
+            <form id="search-form">
+              <input
+                type="text"
+                id="city-search"
+                placeholder="Search for a city..."
+                autocomplete="off"
+                autofocus="on"
+              />
+              <input type="submit" value="SEARCH" />
+            </form>
           </div>
-          <div class="col-7">
-            <img src="images/weathergirl.svg" alt="" width="120" />
-            <ul>
-              <li>Precipitation: <span id="precipitation"></span>%</li>
-              <li>Humidity: <span id="humidity"></span>%</li>
-              <li>Wind: <span id="wind"></span>km/h</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <br />
-      <br />
-      <br />
-      <div class="row">
-        <div class="col-1">
-          <div class="card">
-            <div class="card-body">
-              <p class="weekdays">SAT</p>
-              <p class="weather-condition">
+          <br />
+          <br />
+
+          <div class="row">
+            <div class="col-5">
+              <h2 id="city"></h2>
+              <h4>
                 <img src="images/rain_light.png" width="50" />
-              </p>
-              <p class="temperature">32°|24°</p>
+                <div class="temperature-results">
+                  <span class="current-temperature" id="temperature"></span>
+                  <span class="units">
+                    <a href="#" id="celsius-link">°C</a>" |
+                    <a href="#" id="fahrenheit-link">°F</a></span
+                  >
+                </div>
+              </h4>
+              <ul>
+                <li id="current-date">Fri 3:39PM</li>
+                <li id="condition"></li>
+              </ul>
+            </div>
+            <div class="col-7">
+              <img src="images/weathergirl.svg" alt="" width="120" />
+              <ul>
+                <li>Precipitation: <span id="precipitation"></span>%</li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span>km/h</li>
+              </ul>
             </div>
           </div>
         </div>
-        <div class="col-1">
-          <div class="card">
-            <div class="card-body">
-              <p class="weekdays">SUN</p>
-              <p class="weather-condition">
-                <img src="images/sunny.png" width="50" />
-              </p>
-              <p class="temperature">32°|25°</p>
+        <br />
+        <br />
+        <br />
+        <div class="row">
+          <div class="col-2">
+            <div class="card">
+              <div class="card-body">
+                <p class="weekdays">SAT</p>
+                <p class="weather-condition">
+                  <img src="images/rain_light.png" width="50" />
+                </p>
+                <p class="temperature">32°|24°</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-1">
-          <div class="card">
-            <div class="card-body">
-              <p class="weekdays">MON</p>
-              <p class="weather-condition">
-                <img src="images/sunny.png" width="50" />
-              </p>
-              <p class="temperature">32°|25°</p>
+          <div class="col-2">
+            <div class="card">
+              <div class="card-body">
+                <p class="weekdays">SUN</p>
+                <p class="weather-condition">
+                  <img src="images/sunny.png" width="50" />
+                </p>
+                <p class="temperature">32°|25°</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-1">
-          <div class="card">
-            <div class="card-body">
-              <p class="weekdays">TUE</p>
-              <p class="weather-condition">
-                <img src="images/sunny.png" width="50" />
-              </p>
-              <p class="temperature">32°|25°</p>
+          <div class="col-2">
+            <div class="card">
+              <div class="card-body">
+                <p class="weekdays">MON</p>
+                <p class="weather-condition">
+                  <img src="images/sunny.png" width="50" />
+                </p>
+                <p class="temperature">32°|25°</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-1">
-          <div class="card">
-            <div class="card-body">
-              <p class="weekdays">WED</p>
-              <p class="weather-condition">
-                <img src="images/sunny.png" width="50" />
-              </p>
-              <p class="temperature">32°|25°</p>
+          <div class="col-2">
+            <div class="card">
+              <div class="card-body">
+                <p class="weekdays">TUE</p>
+                <p class="weather-condition">
+                  <img src="images/sunny.png" width="50" />
+                </p>
+                <p class="temperature">32°|25°</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-1">
-          <div class="card">
-            <div class="card-body">
-              <p class="weekdays">THUR</p>
-              <p class="weather-condition">
-                <img src="images/sunny.png" width="50" />
-              </p>
-              <p class="temperature">32°|25°</p>
+          <div class="col-2">
+            <div class="card">
+              <div class="card-body">
+                <p class="weekdays">WED</p>
+                <p class="weather-condition">
+                  <img src="images/sunny.png" width="50" />
+                </p>
+                <p class="temperature">32°|25°</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="card">
+              <div class="card-body">
+                <p class="weekdays">THUR</p>
+                <p class="weather-condition">
+                  <img src="images/sunny.png" width="50" />
+                </p>
+                <p class="temperature">32°|25°</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <footer>
+        <a
+          href="https://github.com/bukielady/my-weather-project"
+          target="_blank"
+          >Open-source code</a
+        >
+        by Bukola Elisha
+      </footer>
     </div>
-    <footer>
-      <a href="https://github.com/bukielady/my-weather-project" target="_blank"
-        >Open source code</a
-      >
-      by Bukola Elisha
-    </footer>
+
     <script src="src/index.js"></script>
   </body>
 </html>

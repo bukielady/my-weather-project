@@ -11,11 +11,6 @@ ul {
   padding-left: 0;
   margin: 0;
 }
-footer {
-  font-family: "Source Sans Pro", sans-serif;
-  position: relative;
-  left: 125px;
-}
 .btn {
   margin: 0 auto;
   border-radius: 10px;
@@ -25,15 +20,21 @@ footer {
 }
 .container {
   font-family: "Source Sans Pro", sans-serif;
-  padding-top: 20px;
-  border-radius: 10px;
-  margin: 0 auto;
 }
 .fa-location-crosshairs {
   width: 200;
 }
 .temperature {
   font-size: 11px;
+}
+.weather-app {
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+  background: linear-gradient(to top left, #cee5ffff, #fcfcffff);
+  padding: ;
+  width: 800px;
 }
 .weekdays {
   font-size: 11px;
