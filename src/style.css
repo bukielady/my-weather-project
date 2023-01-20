@@ -30,6 +30,9 @@ footer {
 .container {
   font-family: "Source Sans Pro", sans-serif;
 }
+.condition {
+  text-transform: capitalize;
+}
 .card:hover {
   background-color: inherit;
 }
