@@ -34,7 +34,6 @@ function submitSearch(event) {
 }
 
 function displayWeather(response) {
-  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.city;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.daily[0].temperature.day
