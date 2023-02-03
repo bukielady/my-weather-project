@@ -33,8 +33,12 @@ function submitSearch(event) {
   search(city);
 }
 
+function getForecast(coordinates) {
+  let apiKey = "bt3bo829922a2a4ff5a7368510baad63";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 function displayWeather(response) {
-  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.city;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.daily[0].temperature.day
@@ -57,6 +61,8 @@ function displayWeather(response) {
     .setAttribute("alt", response.data.daily[0].condition.icon);
 
   celsiusTemperature = response.data.daily[0].temperature.day;
+
+  getForecast(response.data.coordinates);
 }
 function searchLocation(position) {
   let apiKey = "bt3bo829922a2a4ff5a7368510baad63";
@@ -85,29 +91,41 @@ function convertToCelsius(event) {
   fahrenheitLink.classList.remove("active");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
-
-function displayForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  return days[day];
+}
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = ` <div class="row">`;
-  let days = ["SAT", "SUN", "MON", "TUE", "WED", "THU"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 7)
+      if (index > 0) {
+        forecastHTML =
+          forecastHTML +
+          `<div class="col-2">
             <div class="card">
               <div class="card-body">
-                <p class="weekdays">${day}</p>
+                <p class="weekdays">${formatDay(forecastDay.time)}</p>
                 <p class="weather-condition">
                   <img
                     class="weather-icon"
-                    src="images/rain_light.png"
+                    src= "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                      forecastDay.condition.icon
+                    }.png"
                     width="50"
                   />
                 </p>
-                <p class="temperature">32°|24°</p>
+                <p class="temperature">${Math.round(
+                  forecastDay.temperature.maximum
+                )}°|${Math.round(forecastDay.temperature.minimum)}°</p>
               </div>
             </div>
           </div>`;
+      }
   });
   forecastHTML += `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -125,4 +143,3 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", submitSearch);
 
 search("Lagos");
-displayForecast();
