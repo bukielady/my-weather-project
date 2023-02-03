@@ -34,6 +34,7 @@ function submitSearch(event) {
 }
 
 function displayWeather(response) {
+  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.city;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.daily[0].temperature.day
@@ -85,6 +86,32 @@ function convertToCelsius(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = ` <div class="row">`;
+  let days = ["SAT", "SUN", "MON", "TUE", "WED", "THU"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+            <div class="card">
+              <div class="card-body">
+                <p class="weekdays">${day}</p>
+                <p class="weather-condition">
+                  <img
+                    class="weather-icon"
+                    src="images/rain_light.png"
+                    width="50"
+                  />
+                </p>
+                <p class="temperature">32°|24°</p>
+              </div>
+            </div>
+          </div>`;
+  });
+  forecastHTML += `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
@@ -98,3 +125,4 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", submitSearch);
 
 search("Lagos");
+displayForecast();

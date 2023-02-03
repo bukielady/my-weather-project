@@ -36,6 +36,9 @@ footer {
 .card:hover {
   background-color: inherit;
 }
+.card {
+  width: 100;
+}
 .weather-temperature .active {
   color: #0d0d0e;
   cursor: default;
@@ -52,6 +55,9 @@ footer {
 .temperature {
   font-size: 15px;
   text-align: center;
+}
+.temperature-min {
+  opacity: 0.8;
 }
 .weather-app {
   margin: 30px auto;
