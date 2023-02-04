@@ -54,7 +54,7 @@ function displayWeather(response) {
     .querySelector("#icon")
     .setAttribute(
       "src",
-      `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.daily[0].condition.icon}.png`
+      `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.daily[0].condition.icon}.png`
     );
   document
     .querySelector("#icon")
@@ -66,7 +66,7 @@ function displayWeather(response) {
 }
 function searchLocation(position) {
   let apiKey = "bt3bo829922a2a4ff5a7368510baad63";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${position.coords.longitude}&lat=${position.coords.latitude}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${position.longitude}&lat=${position.latitude}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
 }
 function getCurrentLocation(event) {
@@ -113,7 +113,7 @@ function displayForecast(response) {
                 <p class="weather-condition">
                   <img
                     class="weather-icon"
-                    src= "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                    src= "https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
                       forecastDay.condition.icon
                     }.png"
                     width="50"
